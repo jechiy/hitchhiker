@@ -1,0 +1,14 @@
+{
+    "name": "kronik3r/kronik3r.github.io",
+    "description": "My personal website ",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maddane Motaquillah",
+            "email": "maddane.info@gmail.com",
+            "homepage": "http://kronik3r.github.io/"
+        }
+    ],
+    "require": {},
+    "config": {}
+}

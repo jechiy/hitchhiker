@@ -1,0 +1,11 @@
+---
+use: ["posts_tags"]
+permalink: tags.json
+---
+{
+    "categories" : [
+        {% for tag,posts in data.posts_tags %}
+            "{{ tag }}" {% if not loop.last %}, {% endif %}
+        {% endfor %}
+    ]
+}

@@ -1,0 +1,13 @@
+---
+layout: default
+title: Home
+use:
+    - posts
+---
+{% block content_wrapper %}
+    {% for post in data.posts %}
+        {% if loop.first %}
+            {% include "post_detail" with {post:post} only %}
+        {% endif %}
+    {% endfor %}
+{% endblock %}

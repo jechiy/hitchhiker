@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hitchhiker's blog to software developement</title>
+        <link rel="stylesheet" href="/assets/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id="header">
+            <a id="logo" href="/">
+                <div id="hitchiker">Hitchhiker's</div>
+                <div id="slogan">blog on software developement</div>
+            </a>
+            <ul id="menu">
+                <li class="active">
+                    <a href="#">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Why ?
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="about">
+            <span id="avatar">
+                <img src="http://placehold.it/130x130&text=Me" alt="" id="avatar">
+            </span>
+
+            <div id="name">Motaquillah Maddane</div>
+
+            <p id="description">
+                Fullstack Developer, always thinking of U and I and the X of course :). <br>
+                Interested in PHP(Laravel) & Js(Angular). A former .NET(er)
+            </p>
+        </div>
+
+        <div id="sidebar">
+            <div id="sidebar-actions" >
+                <span id="entries-filter" class="in-top-sidebar"> In <span class="selected-tag">All</span></span>
+
+                <span id="sidebar-toggler" class="in-top-sidebar"><i class="fa fa-chevron-left"></i></span>
+            </div>
+
+            <div id="entries-feed">
+                {% for post in data.posts %}
+                    <div class="entry">
+                        <a href="{{ site.url }}{{ post.url }}" class="entry-title">
+                            {{ post.title }}
+                        </a>
+                        <div class="entry-sub-title">
+                            {{ post.subtitle }}
+                        </div>
+
+                            <div class="entry-tags">
+                                In
+                                {% if not post.tags %} <a href="#" class="entry-tag">All</a> {% endif %}
+                                {% for tag in post.tags %} <a href="#" class="entry-tag">{{ tag }}</a> {% endfor %}
+                            </div>
+
+                        <div class="entry-date"> Read more </div> <!-- @todo Change this to a link -->
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="content">
+            {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+        </div>
+    </body>
+</html>
