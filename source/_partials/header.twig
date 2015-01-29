@@ -1,0 +1,32 @@
+<div id="header">
+    <a id="logo" href="/">
+        <div id="hitchiker">Hitchhiker's</div>
+        <div id="slogan">blog on software developement</div>
+    </a>
+
+    <ul id="menu">
+        <li class="{% if page.nav == "blog" %}active{% endif %}">
+            <a href="/">
+                Blog
+            </a>
+        </li>
+
+        {% set found = false %}
+        {% for post in data.posts %}
+            {% if post.nav == "why" and not found  %}
+                <li class="{% if page.nav == "why" %}active{% endif %}">
+                    <a href="{{ site.url }}{{ post.url }}">
+                        Why ?
+                    </a>
+                </li>
+                {% set found = true %}
+            {% endif %}
+        {% endfor %}
+
+        <li class="{% if page.nav == "contact" %}active{% endif %}">
+            <a href="#">
+                Contact
+            </a>
+        </li>
+    </ul>
+</div>

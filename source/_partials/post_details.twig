@@ -1,5 +1,5 @@
- <div class="post-header">
-    <img src="http://placehold.it/1500x400&text=Sexy post cover" alt="" class="post-cover">
+<div class="post-header">
+    <img src="{{post.cover}}" alt="" class="post-cover">
 
     <div class="post-titles">
         <div class="post-title">{{ post.title }}</div>
@@ -8,11 +8,11 @@
 
     <div class="post-tags">
         {% for tag in post.tags %}
-            <a href="#" class="post-tag">{{ tag }}</a>
+            <a href="#" class="post-tag"> {{ tag }} </a>
         {% endfor %}
     </div>
 
-    <span class="post-date">{{ post.date|date('d F o') }}</span>
+    <span class="post-date">{{post.date|date('d F o')}}</span>
 </div>
 
 <div class="post-content">

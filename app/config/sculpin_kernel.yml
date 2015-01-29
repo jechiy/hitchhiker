@@ -1,0 +1,9 @@
+sculpin_content_types:
+    posts:
+        type: path
+        permalink: entries/:year/:month/:day/:filename/
+        layout: post
+        enabled: true
+        taxonomies:
+            - tags
+

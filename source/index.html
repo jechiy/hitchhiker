@@ -1,13 +1,14 @@
 ---
 layout: default
 title: Home
+nav: blog
 use:
     - posts
 ---
-{% block content_wrapper %}
+{% block content %}
     {% for post in data.posts %}
         {% if loop.first %}
-            {% include "post_detail" with {post:post} only %}
+            {% include "post_details.twig" with {post:post}%}
         {% endif %}
     {% endfor %}
 {% endblock %}

@@ -1,0 +1,22 @@
+<div id="sidebar">
+    <div id="sidebar-actions" >
+        <span id="entries-filter" class="in-top-sidebar"> In <span class="selected-tag">All</span></span>
+
+        <span id="sidebar-toggler" class="in-top-sidebar"><i class="fa fa-chevron-left"></i></span>
+    </div>
+
+    <div id="entries-feed">
+        {% for post in data.posts %}
+            <div class="entry">
+                <a href="{{ site.url }}{{ post.url }}" class="entry-title">
+                    {{ post.title }}
+                </a>
+                <div class="entry-sub-title">
+                    Programmer talking about programming
+                </div>
+                <div class="entry-tags">In <a href="" class="entry-tag">General</a> <a href="" class="entry-tag">Programming</a></div>
+                <div class="entry-date"> 14 November 2014 </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

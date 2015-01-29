@@ -1,14 +1,22 @@
 {
-    "name": "kronik3r/kronik3r.github.io",
-    "description": "My personal website ",
+    "name": "dev-human",
+    "description": "Non-technical resources for humans who code",
+    "type": "project",
     "license": "MIT",
     "authors": [
         {
-            "name": "Maddane Motaquillah",
-            "email": "maddane.info@gmail.com",
-            "homepage": "http://kronik3r.github.io/"
+            "name": "Erika Heidi",
+            "email": "erika@erikaheidi.com",
+            "homepage": "http://erikaheidi.com"
         }
     ],
-    "require": {},
-    "config": {}
+    "require": {
+        "components/highlightjs": "~7.3.0"
+    },
+    "config": {
+        "component-dir": "source/assets"
+    },
+    "autoload" : {
+        "psr-0" : { "" : "bundles" }
+    }
 }
