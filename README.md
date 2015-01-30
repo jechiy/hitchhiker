@@ -1,13 +1,11 @@
 # Hitchhicker's blog on software developement
 
 Is a blog created by a developer, for developers, focused on non-technical, lightening content.
-Visit the website to get more info: http://kronik3r.github.com .
+Visit the website to get more info: http://kronik3r.github.io .
 
 Powered by [Sculpin](http://sculpin.io).
 
 ## Contributing
-
-If you want to contribute with articles.
 
 If you want to run the website locally to preview your post, of if you want to contribute with code and new features, check the following section on how to install Sculpin.
 

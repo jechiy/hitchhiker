@@ -1,22 +1,17 @@
 {
-    "name": "dev-human",
-    "description": "Non-technical resources for humans who code",
-    "type": "project",
+    "name": "hitchhiker",
+    "description": "hitchhiker's blog on software developement",
+    "type": "blog",
     "license": "MIT",
     "authors": [
         {
-            "name": "Erika Heidi",
-            "email": "erika@erikaheidi.com",
-            "homepage": "http://erikaheidi.com"
+            "name": "Motaquillah Maddane",
+            "email": "maddane.info@gmail.com",
+            "homepage": "http://www.hitchhiker.ma"
         }
     ],
-    "require": {
-        "components/highlightjs": "~7.3.0"
-    },
+    "require": {},
     "config": {
         "component-dir": "source/assets"
-    },
-    "autoload" : {
-        "psr-0" : { "" : "bundles" }
     }
 }
