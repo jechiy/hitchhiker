@@ -26,6 +26,11 @@ gulp.task('build_vendor', function(){
         .pipe(gulp.dest('./output_dev/assets/vendor'));
 });
 
+gulp.task('build_images', function(){
+    return gulp.src('./assets/images/**/*.*')
+        .pipe(gulp.dest('./output_dev/assets/images'));
+});
+
 gulp.task('sass', function(){
     return gulp.src('./assets/sass/**')
         .pipe(sass())
@@ -33,7 +38,7 @@ gulp.task('sass', function(){
         .pipe(gulp.dest('./output_dev/assets'));
 });
 
-gulp.task('browserSync', ['build', 'sass', 'build_js', 'build_vendor'], function() {
+gulp.task('browserSync', ['build', 'sass', 'build_js', 'build_vendor', 'build_images'], function() {
     browserSync({
         server: {
             baseDir: ['./output_dev/']
@@ -46,6 +51,7 @@ gulp.task('watch', ['browserSync'], function() {
     gulp.watch('./assets/sass/**', ['sass']);
     gulp.watch('./assets/js/**', ['build_js']);
     gulp.watch('./assets/vendor/**', ['build_vendor']);
+    gulp.watch('./assets/images/**', ['build_images']);
     gulp.watch('./source/**', ['build']);
 });
 

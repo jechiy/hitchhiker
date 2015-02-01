@@ -5,7 +5,10 @@
     font-size: 24px;
     padding-left:25px;
     padding-top:25px;
-    position: relative;
+    position: absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
 }
 
 .sticky + #content {
@@ -75,8 +78,9 @@
 
 #sidebar-toggler i{
     position: relative;
-    top: 1px;
-    left: 3px;
+    top: -4px;
+    left: 5px;
+    font-size: 35px;
 }
 
 #entries-feed {
@@ -108,17 +112,16 @@
 }
 
 .entry-tags {
+    font-size: 10px;
     float: left;
 }
 
-.entry-date {
+.entry-read-more {
+    font-size: 16px;
     float:right;
 }
-.entry-tags, .entry-date {
-    font-size: 10px;
-}
 
-.entry-tag, .entry-date {
+.entry-tag, .entry-read-more {
     color:$greeny;
     text-decoration: none;
 }
@@ -165,10 +168,22 @@
 }
 
 .entry.active .entry-tag,
-.entry.active .entry-date {
+.entry.active .entry-read-more {
     color : $blueish;
 }
 
 .selected-tag {
     color: $orange;
+}
+
+.sidebar-nav-btn {
+    width: 100%;
+    margin: 40px auto;
+    cursor: pointer;
+    text-align: center;
+}
+
+.sidebar-down {
+    // debug
+    display: none;
 }

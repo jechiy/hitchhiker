@@ -2,12 +2,16 @@
     <div id="sidebar-actions" >
         <span id="entries-filter" class="in-top-sidebar"> In <span class="selected-tag">All</span></span>
 
-        <span id="sidebar-toggler" class="in-top-sidebar"><i class="fa fa-chevron-left"></i></span>
+        <span id="sidebar-toggler" class="in-top-sidebar"><i class="fa fa-angle-left"></i></span>
+    </div>
+
+    <div class="sidebar-nav-btn sidebar-up">
+        <img src="{{ site.url }}/assets/images/up.png" alt="">
     </div>
 
     <div id="entries-feed">
         {% for post in data.posts %}
-            <div class="entry">
+            <div class="entry {% if page.url == post.url %}active{% endif %}">
                 <a href="{{ site.url }}{{ post.url }}" class="entry-title">
                     {{ post.title }}
                 </a>
@@ -15,8 +19,12 @@
                     Programmer talking about programming
                 </div>
                 <div class="entry-tags">In <a href="" class="entry-tag">General</a> <a href="" class="entry-tag">Programming</a></div>
-                <div class="entry-date"> 14 November 2014 </div>
+                <a href="#" class="entry-read-more"> Read more </a>
             </div>
         {% endfor %}
+    </div>
+
+    <div class="sidebar-nav-btn sidebar-down">
+        <img src="{{ site.url }}/assets/images/down.png" alt="">
     </div>
 </div>

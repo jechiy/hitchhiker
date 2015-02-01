@@ -12,10 +12,12 @@
 
         {% include "about.twig" %}
 
-        {% include 'sidebar.twig' %}
+        <div class="middle-wrapper">
+            {% include 'sidebar.twig' %}
 
-        <div id="content">
-            {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+            <div id="content">
+                {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+            </div>
         </div>
 
         <script src="{{ site.url }}/assets/vendor/jquery/jquery-2.1.3.min.js"></script>
