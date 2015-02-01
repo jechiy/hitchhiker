@@ -1,0 +1,35 @@
+#about {
+    background-color: $orange;
+    color: #fff;
+    text-align: center;
+    // Debug
+    height: 240px;
+    margin-top:$headerHeight;
+}
+
+#avatar {
+    position:relative;
+    display: inline-block;
+    height: $avatarSize/2;
+    width: $avatarSize;
+    z-index: 100;
+}
+
+#avatar img {
+    position:absolute;
+    height: $avatarSize;
+    width: $avatarSize;
+    border-radius: $avatarSize;
+    position:absolute;
+    top: -$avatarSize/2;
+    left:0px;
+    right:0px;
+}
+
+#name {
+    font-size: 40px;
+}
+
+#description {
+    font-size: 20px;
+}

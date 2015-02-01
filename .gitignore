@@ -5,5 +5,6 @@
 /app/logs/*
 /output_*/
 /source/components/
-/template
+/template/
+/node_modules/
 s3.conf

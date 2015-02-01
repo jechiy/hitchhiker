@@ -1,0 +1,94 @@
+.header {
+    height: $headerHeight;
+    background-color: $iron;
+    color: $orange;
+    padding: 20px 25px;
+    overflow: hidden;
+    position:fixed;
+    top: 0px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 80;
+}
+
+.logo {
+    width: 350px;
+    text-align: right;
+    float: left;
+    position: relative;
+    top: -15px;
+    display: block;
+    text-decoration: none;
+    color : $orange;
+}
+
+.hitchiker {
+    font-size: 70px;
+    margin-bottom: -10px;
+}
+
+.slogan {
+    font-size: 20px;
+}
+
+.menu {
+    float:right;
+    margin:0px;
+    padding:0px;
+    position:relative;
+    top:-20px;
+}
+
+.menu > li {
+    display: inline-block;
+    height: $headerHeight;
+    line-height: $headerHeight;
+    margin-right:60px;
+    font-size: 25px;
+    position: relative;
+}
+
+
+.menu > li:last-child {
+    margin-right:0px;
+}
+
+.menu a {
+    text-decoration: none;
+    color : $orange;
+}
+
+.menu > li.active a,
+.menu a:hover {
+    border-bottom: 2px $orange solid;
+    padding-bottom : 4px;
+}
+
+.mini-header {
+    border-bottom: solid 3px #fff;
+    height: $headerHeight * 0.5;
+
+    .menu > li {
+        height: $headerHeight * 0.5;
+        line-height: $headerHeight * 0.5;
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 175px;
+    }
+
+    .hitchiker {
+        font-size: 35px;
+    }
+
+    .slogan {
+        font-size: 10px;
+    }
+
+    .mini-header .menu {
+        top:-25px;
+    }
+}

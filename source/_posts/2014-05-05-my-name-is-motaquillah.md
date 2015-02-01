@@ -1,5 +1,5 @@
 ---
-title: My name is Motaquillah
+title: My name is Motaquillah, and i'll make you smile
 subtitle: Listeting to gorilaz
 cover: http://placehold.it/1500x400&text=Gorillaz
 nav: why
