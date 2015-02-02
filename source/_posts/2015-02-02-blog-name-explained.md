@@ -9,7 +9,7 @@ use:
     - posts
 ---
 
-As a Science fiction enthusiast, one day i was chatting with a friend of mine about good Sci-Fi books, then he asked me if i know **The Hitchhiker's Guide to the Galaxy**, I didn't know the book back then, nor what hitchhiker meant, but I felt immediately in love with the word and it sounded so damn cool that it stuck in my head forever.
+As a Science fiction enthusiast, one day i was chatting with a friend of mine about good Sci-Fi books, then he asked me if i knew **The Hitchhiker's Guide to the Galaxy**, I didn't know the book back then, nor what hitchhiker meant, but I felt immediately in love with the word and it sounded so damn cool that it stuck in my head forever.
 
 1 years passed, during which I was thinking about starting blogging, but I've never been serious about it, until the day I read this [amazing blog post](http://www.hanselman.com/blog/YourBlogIsTheEngineOfCommunity.aspx) by [Scott Hanselman](http://www.hanselman.com/blog/).
 
