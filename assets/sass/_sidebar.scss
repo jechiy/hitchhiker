@@ -13,6 +13,7 @@
 
 .sticky + #content {
     margin-left:28.125%;
+    margin-top: -58px;
 }
 
 .sticky {
@@ -124,6 +125,7 @@
 .entry-tag, .entry-read-more {
     color:$greeny;
     text-decoration: none;
+    text-transform: capitalize;
 }
 
 .entry-tag:hover {
