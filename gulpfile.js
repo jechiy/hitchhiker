@@ -3,56 +3,55 @@ var browserSync  = require('browser-sync');
 var sass         = require('gulp-sass');
 var minifyCSS    = require('gulp-minify-css');
 var exec         = require('child_process').exec;
-var rmdir        = require( 'rmdir' );
+var config       = require('./config.js');
 
-gulp.task('build', function(callback){
-    return exec('sculpin generate', function(error, stdout, stderr){
+gulp.task('build', function(done){
+    var sculpinCommande = 'sculpin generate --env=' + config.env;
+    return exec(sculpinCommande, function(error, stdout, stderr){
         console.log(stdout);
         if (error !== null) {
           console.log('exec error: ' + error);
         }
-    }).on('close', callback);
-    /*rmdir('./output_dev', function(){
-    });*/
+    }).on('close', done);
 });
 
 gulp.task('build_js', function(){
-    return gulp.src('./assets/js/**/*.*')
-        .pipe(gulp.dest('./output_dev/assets/js'));
+    return gulp.src(config.src.js)
+        .pipe(gulp.dest(config.dist.js));
 });
 
 gulp.task('build_vendor', function(){
-    return gulp.src('./assets/vendor/**/*.*')
-        .pipe(gulp.dest('./output_dev/assets/vendor'));
+    return gulp.src(config.src.vendor)
+        .pipe(gulp.dest(config.dist.vendor));
 });
 
 gulp.task('build_images', function(){
-    return gulp.src('./assets/images/**/*.*')
-        .pipe(gulp.dest('./output_dev/assets/images'));
+    return gulp.src(config.src.images)
+        .pipe(gulp.dest(config.dist.images));
 });
 
 gulp.task('sass', function(){
-    return gulp.src('./assets/sass/**')
+    return gulp.src(config.src.sass)
         .pipe(sass())
         .pipe(minifyCSS())
-        .pipe(gulp.dest('./output_dev/assets'));
+        .pipe(gulp.dest(config.dist.sass));
 });
 
-gulp.task('browserSync', ['build', 'sass', 'build_js', 'build_vendor', 'build_images'], function() {
+gulp.task("browserSync", ["build", "sass", "build_js", "build_vendor", "build_images"], function() {
     browserSync({
         server: {
-            baseDir: ['./output_dev/']
+            baseDir: ["./" + config.baseDir + "/"]
         },
-        files: [ "./output_dev/**"]
+        files: [ "./" + config.baseDir + "/**"]
     });
 });
 
 gulp.task('watch', ['browserSync'], function() {
-    gulp.watch('./assets/sass/**', ['sass']);
-    gulp.watch('./assets/js/**', ['build_js']);
-    gulp.watch('./assets/vendor/**', ['build_vendor']);
-    gulp.watch('./assets/images/**', ['build_images']);
-    gulp.watch('./source/**', ['build']);
+    gulp.watch( config.watch.sass, ['sass']);
+    gulp.watch( config.watch.js, ['build_js']);
+    gulp.watch( config.watch.vendor, ['build_vendor']);
+    gulp.watch( config.watch.images, ['build_images']);
+    gulp.watch( config.watch.src, ['build']);
 });
 
 gulp.task('default', ['watch']);
