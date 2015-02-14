@@ -1,2 +1,7 @@
 title: Hitchhiker's blog on software developement
+author:
+  name: Motaquillah Maddane
+  googleplus: https://www.google.com/+MotaquillahMaddane
+description: Blog about PHP(Laravel), Js(Angular), CSS & Life.
+cover: /assets/images/covers/road.jpg
 url: http://localhost:3000

@@ -1,0 +1,16 @@
+{% if page.title %} {% set title = page.title ~ ' - ' ~ page.subtitle %} {% else %} {% set title = site.title %} {% endif %}
+{% if page.description %} {% set description = page.description %} {% else %} {% set description = site.description %} {% endif %}
+{% if page.keywords %} {% set keywords = page.keywords %} {% else %} {% set keywords = site.keywords %} {% endif %}
+{% if page.cover %} {% set cover = page.cover %} {% else %} {% set cover = site.cover %} {% endif %}
+
+<meta name="description" content="{{ description }}">
+<meta name="keywords" content="{% for tag in keywords %}{{ keyword }}{% if not loop.last %}, {% endif %}{% endfor %}" />
+
+<meta name="author" content="{{ site.author['googleplus'] }}">
+<link rel="author" href="{{ site.author['googleplus'] }}">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ title }}" />
+<meta name="twitter:description" content="{{ description }}" />
+<meta name="twitter:image" content="{{ site.url }}{{ cover }}" />

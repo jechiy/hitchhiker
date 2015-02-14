@@ -1,6 +1,6 @@
 $(document).ready(function(){
+    // Sticky UI
     var stickyNavTop = $('.sidebar').offset().top - 115;
-
     var stickyNav = function(){
         var scrollTop = $(window).scrollTop();
 
@@ -17,5 +17,5 @@ $(document).ready(function(){
 
     $(window).scroll(function() {
         stickyNav();
-    });
+    });    
 });

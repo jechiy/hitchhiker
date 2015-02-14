@@ -1,0 +1,32 @@
+pre[class*="language-"] {
+	border-radius: 0px;
+	width:100%;
+	left:-20px;
+}
+
+code[data-language] {
+	margin-top: 40px;
+}
+
+pre[class*='language-'] > code[data-language] {
+	overflow: auto;
+	font-size: 0.9rem;
+}
+
+pre[class*='language-'] > code[data-language]::before {
+	content: attr(data-language);
+	color: white;
+	background: $orange;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	padding: 5px 0;
+	text-indent: 15px;
+	border-radius: 0px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+}
