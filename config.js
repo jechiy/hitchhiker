@@ -1,6 +1,17 @@
-// Represents the envirenement root directory
-var env     = ('prod' == 'prod' ? "prod" : "dev");
+// Parsing the args
+var minimist = require('minimist');
+var options = minimist(
+    process.argv.slice(2),
+    {
+        string: 'env',
+        default: { env: 'dev' }
+    }
+);
+
+// Seeting up the base dir depending on the environment
+var env     = options.env;
 var baseDir = 'output_' + env;
+
 var srcBase = {
     js: "./assets/js/",
     vendor: "./assets/vendor/",
@@ -34,6 +45,5 @@ module.exports = {
     },
 
     env: env,
-
     baseDir: baseDir,
 };
