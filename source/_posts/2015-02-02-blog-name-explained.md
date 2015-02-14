@@ -1,6 +1,7 @@
 ---
 title: Blog name explained
 subtitle: Why Hitchhiker ?
+description: On this entry i'll talk about what inspired me to create this blog and how i've come up with the name.
 cover: /assets/images/covers/road.jpg
 nav: why
 tags:

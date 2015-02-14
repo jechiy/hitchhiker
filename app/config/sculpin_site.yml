@@ -1,2 +1,6 @@
 title: Hitchhiker's blog on software developement
-url: http://kronik3r.github.io
+author:
+  name: Motaquillah Maddane
+  googleplus: https://www.google.com/+MotaquillahMaddane
+description: Blog about PHP(Laravel), Js(Angular), CSS & Life.
+cover: /assets/images/covers/road.jpg
