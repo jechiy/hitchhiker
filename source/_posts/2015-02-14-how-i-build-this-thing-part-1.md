@@ -1,5 +1,5 @@
 ---
-title: How i build this thing (Part 1/2)
+title: How I build this thing (Part 1/2)
 subtitle: Inspiration & Design thoughts
 cover: /assets/images/covers/space.jpg
 nav: why
