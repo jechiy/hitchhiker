@@ -20,20 +20,23 @@ var srcBase = {
     src: "./source/**"
 };
 
+// Eexpose the API
 module.exports = {
     src: {
         js: srcBase.js + "**/*.*",
         vendor: srcBase.vendor + "**/*.*",
         images: srcBase.images + "**/*.*",
         sass: srcBase.sass + "**/*.*",
-        src: srcBase.src
+        src: srcBase.src,
+        passiveFiles: "./passive_files/**"
     },
 
     dist: {
         js: "./" + baseDir + "/assets/js",
         vendor: "./" + baseDir + "/assets/vendor",
         images: "./" + baseDir + "/assets/images",
-        sass: "./" + baseDir + "/assets"
+        sass: "./" + baseDir + "/assets",
+        passiveFiles: "./" + baseDir
     },
 
     watch: {
@@ -42,6 +45,12 @@ module.exports = {
         images: srcBase.images + "**",
         sass: srcBase.sass + "**",
         src: srcBase.src
+    },
+
+    githubPage: {
+        remoteUrl: "https://github.com/kronik3r/kronik3r.github.io.git",
+        branch: "master",
+        baseDir: "./output_prod/**/*"
     },
 
     env: env,
