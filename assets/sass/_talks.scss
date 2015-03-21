@@ -1,0 +1,99 @@
+.page-title {
+    text-align: center;
+    margin:70px 0;
+}
+.page-title-text {
+    font-size: 60px;
+    font-weight: 700;
+    color: $orange;
+    position: relative;
+    padding:10px 0px;
+}
+.page-title-text:before,
+.page-title-text:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    height: 10px;
+    background-color: $orange;
+}
+
+.page-title-text:before {
+    top:0px;
+}
+
+.page-title-text:after {
+    bottom:0px;
+}
+
+.talk {
+    height: 300px;
+    position : relative;
+    overflow: hidden;
+    font-size: 55px;
+    font-weight: 700;
+}
+
+.talk:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -.25em;
+}
+
+.talk-cover {
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+}
+
+.talk-cover img {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    margin: auto;
+    min-width: 100%;
+}
+
+.talk-link {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin:0px 2%;
+    width: 96%;
+}
+
+.talk-title {
+    display: inline-block;
+    width: 79%;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+.talk-icon {
+    display: inline-block;
+    width: 19%;
+    text-align: right;
+}
+.talk-icon i{
+    font-size: 160px !important;
+}
+
+.talk-type-2 {
+    .talk-title,
+    .talk-icon {
+        float: right;
+    }
+    .talk-title {
+        text-align: right;
+    }
+    .talk-icon {
+        text-align: left;
+    }
+}
