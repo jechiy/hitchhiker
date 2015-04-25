@@ -2,6 +2,7 @@ pre[class*="language-"] {
 	border-radius: 0px;
 	width:100%;
 	left:-20px;
+	margin: 1em 0;
 }
 
 code[data-language] {
@@ -23,6 +24,7 @@ pre[class*='language-'] > code[data-language]::before {
 	width: 100%;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: bold;
+	text-transform: uppercase;
 	letter-spacing: 1px;
 	padding: 5px 0;
 	text-indent: 15px;

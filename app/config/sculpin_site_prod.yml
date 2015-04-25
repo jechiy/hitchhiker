@@ -1,0 +1,5 @@
+imports:
+- sculpin_site.yml
+url: http://hitchhiker.ma
+tracking_id: UA-59246622-1
+disqus_shortname: hitchhikerblog
