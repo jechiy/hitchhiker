@@ -3,6 +3,7 @@ var browserSync  = require('browser-sync');
 var sass         = require('gulp-sass');
 var minifyCSS    = require('gulp-minify-css');
 var exec         = require('child_process').exec;
+var ghPages      = require('gulp-gh-pages');
 var config       = require('./config.js');
 
 gulp.task('build', function(done){
@@ -30,6 +31,11 @@ gulp.task('build_images', function(){
         .pipe(gulp.dest(config.dist.images));
 });
 
+gulp.task('build_passive_files', function(){
+    return gulp.src(config.src.passiveFiles)
+        .pipe(gulp.dest(config.dist.passiveFiles));
+});
+
 gulp.task('sass', function(){
     return gulp.src(config.src.sass)
         .pipe(sass())
@@ -37,14 +43,25 @@ gulp.task('sass', function(){
         .pipe(gulp.dest(config.dist.sass));
 });
 
-gulp.task("browserSync", ["build", "sass", "build_js", "build_vendor", "build_images"], function() {
-    browserSync({
-        server: {
-            baseDir: ["./" + config.baseDir + "/"]
-        },
-        files: [ "./" + config.baseDir + "/**"]
-    });
-});
+gulp.task(
+    "browserSync",
+    [
+        "build",
+        "sass",
+        "build_js",
+        "build_vendor",
+        "build_images",
+        "build_passive_files"
+    ],
+    function() {
+        browserSync({
+            server: {
+                baseDir: ["./" + config.baseDir + "/"]
+            },
+            files: [ "./" + config.baseDir + "/**"]
+        });
+    }
+);
 
 gulp.task('watch', ['browserSync'], function() {
     gulp.watch( config.watch.sass, ['sass']);
@@ -52,6 +69,11 @@ gulp.task('watch', ['browserSync'], function() {
     gulp.watch( config.watch.vendor, ['build_vendor']);
     gulp.watch( config.watch.images, ['build_images']);
     gulp.watch( config.watch.src, ['build']);
+});
+
+gulp.task('deploy', function() {
+  return gulp.src(config.githubPage.baseDir)
+    .pipe(ghPages(config.githubPage));
 });
 
 gulp.task('default', ['watch']);

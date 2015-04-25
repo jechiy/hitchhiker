@@ -11,6 +11,12 @@
             </a>
         </li>
 
+        <li class="{% if page.nav == "talks" %}active{% endif %}">
+            <a href="{{ site.url }}/talks">
+                Talks
+            </a>
+        </li>
+
         {% set found = false %}
         {% for post in data.posts %}
             {% if post.nav == "why" and not found  %}
