@@ -3,9 +3,3 @@
 
 // Need to work on:
 - Other platforms support
-
-==========================================
-Explain how SSG gives you access to a lot of infromation that you can explore using
-a programming language then they get transformed into static files
-
-Talk about the possiblities of the markdown and where to look for them

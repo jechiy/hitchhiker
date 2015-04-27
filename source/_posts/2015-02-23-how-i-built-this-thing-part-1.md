@@ -1,5 +1,5 @@
 ---
-title: How I built this thing (Part 1/4)
+title: How I built this thing (Part 1/3)
 subtitle: Inspiration & Design thoughts
 cover: /assets/images/covers/space.jpg
 tags:
