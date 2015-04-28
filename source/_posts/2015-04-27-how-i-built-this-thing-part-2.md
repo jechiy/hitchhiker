@@ -14,7 +14,7 @@ That was **Ishmael** from **Moby dick**, This quote always comes to my mind when
 
 I'm a developer with technical background, who wants to start blogging and I don't want something that hides the technical details behind some UIs that do things that I'm familiar with, I'm a sailor, so why should I be a passenger and pay with my time to learn another way to do things that I already know?
 
-In [the first part](http://hitchhiker.ma/entries/2015/02/23/how-i-built-this-thing-part-1/) of this series I talked about the inspiration and how I created the design of this blog, in the second part we will see how to use [Sculpin](https://sculpin.io/) to create a fully functional blog and finally in the fourth part we will tackle automatizing all the process with [Gulp](http://gulpjs.com/) from managing the assets to pushing to github pages.
+In [the first part](http://hitchhiker.ma/entries/2015/02/23/how-i-built-this-thing-part-1/) of this series I talked about the inspiration and how I created the design of this blog, in the second part we will see how to use [Sculpin](https://sculpin.io/) to create a fully functional blog and finally in the third part we will tackle automatizing all the process with [Gulp](http://gulpjs.com/) from managing the assets to pushing to the content to github pages.
 
 Note: I didn't wanted to tackle the process of building my own blog since it contains unnecessary information for a starter, but don't worry what I'm describing in this series is a simplified version of my blog nevertheless the code of my Blog is [available in github](https://github.com/kronik3r/hitchhiker).
 
@@ -73,7 +73,7 @@ php "%~dp0sculpin" %*
 
 ### Starting point
 
-As I explained earlier SSGs are not limited to blogging only and so do Sculpin, However It has a lot of features built-in for blogs.
+As I explained earlier SSGs are not limited to blogging only and so do Sculpin, it has a lot of features built-in for blogs.
 
 In the official documentation they recommend using a [Starter kit](https://github.com/sculpin/sculpin-blog-skeleton.git) to get a blog skeleton, which is a good start, but for me, personally, that really get me off the rails, since it contains some advanced features that I didn't wanted to look at first, which made things complex for me. That's why I was obliged to read community projects and jump from one to another in order to understand certain features. the core team themselves are recommending doing this and they're doing their best to improve the documentation. 
 
@@ -183,7 +183,7 @@ There are some other folders and files too that I choose to hide for the sake of
 
 ## Transformation process
 
-Now let's dig into the transformation process, Sculpin take all the files within the **source** directory (recursively), except for some folders that we are going to see later, then do the same thing as for the article file. Finally the result is saved in the **out_{environment}** directory depending on your environment. You can easily specify your environment as follow **--env={environment}** while executing **sculpin generate** , the default environment is **dev**. However one thing to notice here, Sculpin ignore some files and don't apply the described process to them like *CSS*, *JS*, *images* files (which the case for the **app/source/assets** folder), it simply takes them and copy them (conserving their original file hierarchy) into the output folder.
+Now let's dig into the transformation process, Sculpin take all the files within the **source** directory (recursively), except for some folders that we are going to see later, then do the same thing as for the article file. Finally the result is saved in the **out_{environment}** directory depending on your environment. You can easily specify your environment as follow **--env={environment}** while executing **sculpin generate** , the default environment is **dev**. However one thing to notice here, Sculpin ignore some files and don't apply the described process to them, like *CSS*, *JS*, *Images* files (which the case for the **app/source/assets** folder), it simply takes them and copy them (conserving their original file hierarchy) into the output folder.
 
 Ok, enough theory! To illustrate the process I'm going to take a file and explain how it get transformed to the final result!
 
@@ -237,38 +237,38 @@ use:
 
 So here, Sculpin based upon the information of the Frontmater which are:
 
-- **Layout:** Which is the name of the template(layout) for the current file, all layouts are stored within the **_views** folder, so if you specify a name in this property make sure that there's a file with the same name exists in that folder.
+- **Layout:** Which is the name of the template(layout) for the current file, all layouts are stored within the **_views** folder, so if you specify a name in this property make sure that there's a file with the same name in that folder.
 
 
-- **Use:** Sculpin gives you access to a variety of information that you can exploit within your files, layouts. For instance you can use **posts_categories**, **posts_tags**, **posts** respectively to access  categories, tags and entries.
+- **Use:** Sculpin gives you access to a variety of information that you can exploit within your files, layouts. For instance you can use **posts_categories**, **posts_tags**, **posts** respectively to access  categories, tags and articles.
 
-**Note**: Notice that the frontmater can be also used to pass variables to the layout. like custom page title, the menu entry to mark as active and so on so forth.
+**Note**: Notice that the frontmater can be also used to pass variables to the layout. like custom page title, the menu entry to mark as active and so on.
 
 I'll show you how to do that later.
 
 Now let's move on the content, that's a twig content, please take a look at the [Twig documentation](http://twig.sensiolabs.org/documentation) for a better understanding of the different components of the library.
 
-In our case we have a **block** named **content** with the content of this current page that's going to be transmitted to the template to place within the appropriately.
+In our case we have a **block** named **content** with the content of this current page that's going to be transmitted to the template to place within  appropriately.
 
-Within every page you have access to the following variables:
+Inside every page you have access to the following variables:
 
 **Data:** Contains all variables that you mentioned in the **use** section of the Frontmater, in our case it contains **posts**.
 
-**Page:** Contains **url** with the page url, **blocks** with the twig blocks within the page and every custom variable in there in out case we have: **layout**, **nav** to help use mark the current page in the menu.
+**Page:** Contains **url** with the page url, **blocks** with the twig blocks within the page and every custom variable in there in out case we have: **layout**.
 
-**Site:** Contains config variables, that comes from the config file located at **app/config/sculpin_kernel.yml** (further we will see how to create config file depending on your environment).
+**Site:** Contains config variables, that come from the config file located at **app/config/sculpin_kernel.yml** (further we will see how to create config file depending on your environment).
 
 so let's see the code of the content. we iterate over the Posts(**data.posts**)
 for each post we have access to the following variables:
 
-- **Url:** Url of the blog post, this one can be customized in the configuration, take look at the Doc [here](https://sculpin.io/documentation/content-types/posts/) for more information on that.
+- **Url:** Url of the blog post, this one can be customized in the configuration, take a look at the Doc [here](https://sculpin.io/documentation/content-types/posts/) for more information on that.
 - **Date:** A timestamp value of the published date. the value is taken from the file name.
 - **Title:** The title of the article.
-- **Blocks:** Contains the actual content of the article in HTML. Notice the
-[row filter](http://twig.sensiolabs.org/doc/filters/raw.html) `{% verbatim %}{{ post.blocks.content|raw }}{% endverbatim %}` in order to not escaped the content
+- **Blocks.content:** Contains the actual content of the article in HTML. Notice the
+[row filter](http://twig.sensiolabs.org/doc/filters/raw.html) `{% verbatim %}{{ post.blocks.content|raw }}{% endverbatim %}` in order to not escaped the content.
 - You have also access to Custom variables too.
 
-You didn't notice something? the same variables contained in a **post** are the same available in **page** but with additional variables, well that's because every **post file** within the _posts directory is actual a normal **Sculpin Page** but as Sculpin has a built-in support for Blog functionalities, that's why we have access to those variables out of the box.
+You didn't notice something? the same variables contained in a **post** are the same variables available in **page** but with additional variables, well that's because every **post file** within the _posts directory is actual a normal **Sculpin Page** but as Sculpin has a built-in support for Blog functionalities, that's why we have access to those variables out of the box.
 
 Up to now we've seen the construction of a page, now let's move on the how it content is going to be transferred to the layout page.
 
