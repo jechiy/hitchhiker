@@ -22,23 +22,23 @@ Note: I didn't wanted to tackle the process of building my own blog since it con
 
 ### Overview
 
-Static site generators are not boring as they might seam, containing the label **static** on it doesn't mean that you have to leave the comfortable wysiwyg and go to something more annoying and get your hands dirty with plain HTML to write your content instead they offer a great alternative which is writing your content in a lightweight markup language such Markdown or Textile, that get transformed into HTML and let you focus on the content, not the tool.
+Static site generators are not boring as they might seem, containing the label **static** on it doesn't mean that you have to leave the comfortable wysiwyg and go to something more annoying and get your hands dirty with plain HTML to write your content instead they offer a great alternative which is writing your content in a lightweight markup language such Markdown or Textile, that get transformed into HTML and let you focus on the content, not the tool.
 
 With that said SSG unlike other platforms that generate your content each time a user request it — which is expensive — instead the content get generated when you're working on the content and then the result is served to the user from static pre-generated files.
 
-Finally, SSGs can be used not only for blogging, but also for: Personal websites, Portfolio, Documentation you name it. Generally when viewing content occurs more often than editing it.
+Finally, SSGs can be used not only for blogging, but also for: Personal websites, Portfolio, Documentation, you name it. Generally when viewing content occurs more often than editing it.
 
 ### Benefits
 
 - Secure, since there is no code that get executed, no database.
-- Hight performance.
+- High performance.
 - No expensive internal execution, since they're simple HTML pages.
 - No complicated setup or dependencies.
-- The content is plain text which makes it easy for versioning using a version control systems like **GIT**.
+- The content is plain text which makes it easy for versioning using a VCSs like **GIT**.
 
 ### What about Sculpin
 
-All what we seen above can be applied to Sculpin and it's whiten in PHP, it supports **Markdown files** and **Twig templates**.
+All what we've seen above can be applied to Sculpin and it's written in PHP, it supports **Markdown files** and **Twig templates**.
 
 That's all what you need to know about SSGs, Let's start building the thing.
 
@@ -48,12 +48,11 @@ That's all what you need to know about SSGs, Let's start building the thing.
 
 #### *NIX systems
 
-First download the **PHAR** and then make is executable.
+First, you need to download the **PHAR** and make is executable.
 
 ``` .language-bash
 curl -O https://download.sculpin.io/sculpin.phar
 chmod +x sculpin.phar
-mv sculpin.phar ~/bin/sculpin
 ```
 
 It's practical to be able to use Sculpin from anywhere in your system. In order to do that let's move Sculpin to your bin directory.
@@ -64,7 +63,7 @@ mv sculpin.phar ~/bin/sculpin
 
 #### Windows
 
-You can download the **PHAR** manually from [here](https://download.sculpin.io/sculpin.phar) and put it wherever you want then create a **sculpin.bat** file with the following content and add it to your **PATH**:
+You can download the **PHAR** manually from [here](https://download.sculpin.io/sculpin.phar) and put it wherever you want, then create a **sculpin.bat** file with the following content and add it to your **PATH**:
 
 ``` .language-powershell
 @ECHO OFF
@@ -73,16 +72,16 @@ php "%~dp0sculpin" %*
 
 ### Starting point
 
-As I explained earlier SSGs are not limited to blogging only and so do Sculpin, it has a lot of features built-in for blogs.
+As I explained earlier SSGs are not limited to blogging only, and so do Sculpin. However, it has a lot of built-in features for blogs.
 
 In the official documentation they recommend using a [Starter kit](https://github.com/sculpin/sculpin-blog-skeleton.git) to get a blog skeleton, which is a good start, but for me, personally, that really get me off the rails, since it contains some advanced features that I didn't wanted to look at first, which made things complex for me. That's why I was obliged to read community projects and jump from one to another in order to understand certain features. the core team themselves are recommending doing this and they're doing their best to improve the documentation. 
 
-Meanwhile I decided to create a lightweight, minimal Blog skeleton to help you speed up the process of creating you own blog and more importantly understand the main features of Sculpin.
+Meanwhile, I decided to create a lightweight, minimal Blog skeleton to help you speed up the process of creating you own blog and more importantly understand the main features of Sculpin.
 
-In addition to what Sculpin offers the repo alose contains the following features:
+In addition to what Sculpin offers, the repo also contains the following features:
 
 - Responsive, Minimal design (thanks to Gayan Virajith's [theme Harmony](https://github.com/gayanvirajith/harmony)).
-- [Prims.js](http://prismjs.com/) as a syntax Highlighter
+- [Prims.js](http://prismjs.com/) as a syntax Highlighter.
 - [Disqus](http://disqus.com) Integration for commenting functionalities.
 - Google Analytics integration.
 
@@ -107,7 +106,7 @@ Navigate to [localhost:8000](http://localhost:8000) in order to see the blog.
 
 ### Create your first article
 
-Let's create our first article, create a new Markdown file within **source/_posts** folder and then add the following content:
+Let's create our first article, create a new Markdown file within the **source/_posts** folder and then add the following content:
 
 ``` .language-markdown
 ---
@@ -147,19 +146,19 @@ use:
 
 This one is called the *Frontmater*, which is a [YAML](http://en.wikipedia.org/wiki/YAML) content.
 
-and the second part is the content of the file, in our case it's a standard markdown text. Sculpin uses a Library called [PHP Markdown](https://michelf.ca/projects/php-markdown/) so check it out for more information.
+The second part is the content of the file, in our case it's a standard markdown text. Sculpin uses a Library called [PHP Markdown](https://michelf.ca/projects/php-markdown/) so check it out for more information.
 
 ``` .language-markdown
 # Hi My future self! I won't let down, count on me.
 ```
 
-What happened is that Sculpin took our file and based on informations contained in the **Frontmater** and some other things(that I'll explain later), **it** made some transformation to the file (in our case convert Markdown to HTML) then merge it to a template file that contains a header and a footer and finally put the result into a static HTML file.
+What happened is that Sculpin took our file and based on informations contained in the **Frontmater** and some other things(that I'll explain later), **it** made some transformation to the file (in our case convert Markdown to HTML) then merge it to a template file that contains a header and a footer, then finally puts the result into a static HTML file.
 
-To illustration the process here's a schema.
+To illustrate the process here's a schema.
 
 ![img](/assets/images/resources/hibtt-p2/fusion-schema.svg){.vectorial-img}
 
-# Dive in
+# Diving in
 
 ## File structure
 
@@ -173,15 +172,15 @@ Now let's see the files structure:
     └───_views
 ```
 
-There are some other folders and files too that I choose to hide for the sake of clarity. let's focus only on those presented on the above schema, since they are the foundation.
+There are some other folders and files that I choose to hide for the sake of clarity. Let's focus only on those presented on the above schema, since they are the foundation.
 
-**app/config:** As it name tells this folder contains all config variables for instance: **Base URL** of the website, your **Disqus** user name, etc...
+**app/config:** As it name tells, this folder contains all config variables for instance: **Base URL** of the website, your **Disqus** user name, etc.
 
-**source/_posts:** This directory will be our most used one, it contains the markdown files of our articles.
+**source/_posts:** This directory will be our most used one, it contains the markdown files for our articles.
 
-**source/_views:** Remember those template files, evoked earlier, they live in here.
+**source/_views:** Remember those template files, we evoked earlier! they live in here.
 
-## Transformation process
+## The Transformation process
 
 Now let's dig into the transformation process, Sculpin take all the files within the **source** directory (recursively), except for some folders that we are going to see later, then do the same thing as for the article file. Finally the result is saved in the **out_{environment}** directory depending on your environment. You can easily specify your environment as follow **--env={environment}** while executing **sculpin generate** , the default environment is **dev**. However one thing to notice here, Sculpin ignore some files and don't apply the described process to them, like *CSS*, *JS*, *Images* files (which the case for the **app/source/assets** folder), it simply takes them and copy them (conserving their original file hierarchy) into the output folder.
 
@@ -189,7 +188,7 @@ Ok, enough theory! To illustrate the process I'm going to take a file and explai
 
 ### Example with the Home page
 
-So let's take a look at index.twig:
+So let's take a look at **index.twig**:
 
 ```.language-twig
 ---
@@ -244,13 +243,9 @@ So here, Sculpin based upon the information of the Frontmater which are:
 
 **Note**: Notice that the frontmater can be also used to pass variables to the layout. like custom page title, the menu entry to mark as active and so on.
 
-I'll show you how to do that later.
+Now, let's move on to the content, which is a twig content. Please take a look at the [Twig documentation](http://twig.sensiolabs.org/documentation) for a better understanding of the different components.
 
-Now let's move on the content, that's a twig content, please take a look at the [Twig documentation](http://twig.sensiolabs.org/documentation) for a better understanding of the different components of the library.
-
-In our case we have a **block** named **content** with the content of this current page that's going to be transmitted to the template to place within  appropriately.
-
-Inside every page you have access to the following variables:
+In our case we have a **block** named **content** with the content of this current page that's going to be transmitted to the template. Inside every page you have access to the following variables:
 
 **Data:** Contains all variables that you mentioned in the **use** section of the Frontmater, in our case it contains **posts**.
 
@@ -265,12 +260,12 @@ for each post we have access to the following variables:
 - **Date:** A timestamp value of the published date. the value is taken from the file name.
 - **Title:** The title of the article.
 - **Blocks.content:** Contains the actual content of the article in HTML. Notice the
-[row filter](http://twig.sensiolabs.org/doc/filters/raw.html) `{% verbatim %}{{ post.blocks.content|raw }}{% endverbatim %}` in order to not escaped the content.
-- You have also access to Custom variables too.
+[row filter](http://twig.sensiolabs.org/doc/filters/raw.html) `{% verbatim %}{{ post.blocks.content|raw }}{% endverbatim %}` in order to not escape the content.
+- You have also access to custom variables too.
 
-You didn't notice something? the same variables contained in a **post** are the same variables available in **page** but with additional variables, well that's because every **post file** within the _posts directory is actual a normal **Sculpin Page** but as Sculpin has a built-in support for Blog functionalities, that's why we have access to those variables out of the box.
+You didn't notice something? The same variables contained in a **post** are the same variables available in **page** but with additional variables, well that's because every **post file** within the _posts directory is actually a normal **Sculpin Page**. But as Sculpin has a built-in support for Blog functionalities, that's why we have access to those variables out of the box.
 
-Up to now we've seen the construction of a page, now let's move on the how it content is going to be transferred to the layout page.
+Up to now we've seen the construction of a page, now let's move on to how the content is going to be transferred to the layout page.
 
 ### Layout page
 
@@ -305,7 +300,7 @@ Here's the layout page (**App/source/_views/default.twig**)
 
 ### Partials 
 
-All the included files lives within the **app/source/_views** folder. so before including any file make sure it's in the right place.
+All the included files live within the **app/source/_views** folder. So, before including any file make sure it's in the right place.
 
 Before we jump in, let's take a look at **app/source/_partials/layout/header.twig**:
 
@@ -330,7 +325,7 @@ Notice here the use **page.nav** the custom variable that I talked about earlier
 
 ### Different kind of process
 
-Now let's go back to the **app/source/_views/default.twig** The interesting part here is the following code:
+Now, let's go back to the **app/source/_views/default.twig**. The interesting part here is the following code:
 
 ```.language-twig
 {% verbatim %}{% block content_wrapper %}
@@ -338,25 +333,25 @@ Now let's go back to the **app/source/_views/default.twig** The interesting part
 {% endblock %}{% endverbatim %}
 ```
 
-Here we define where the content of the pages is going to be shown, you may ask why do we have two blocks **content** and **content_wrapper**. Well theoretically **content** is enough but we add the other one to handle a special case with the blog posts, I'll come to that in the next section.
+Here we define where the content of the pages is going to be inserted, you may ask why do we have two blocks **content** and **content_wrapper**. Well theoretically **content** is enough but we add the other one to handle a special case with the blog posts, I'll come to that in the next section.
 
-And finally the content get generate into an HTML file, notice that the file is placed within a folder named with the same name of our original file, eg: original file **about.md** will be **about/index.html** just in order to make the url looks prety.
+Finally the content get transformed into an HTML file, notice that the file is placed within a folder named with the same name of our original file, eg: original file **about.md** will be **about/index.html** just in order to make the url looks pretty.
 
-The blog posts are a slightly different from normal files in the sense that they have some default behavior like having a default **layout** which is **post** that's why if you take a look in the **_views** folder you gonna find a **post.twig** file.
+The blog posts are a slightly different from normal files in the sense that they have some default behavior like having a default **layout**, which is **post** that's why if you take a look in the **_views** folder you gonna find a **post.twig** file.
 
-We could do the following to the **Post** template
+We could do the following to the **Post** template.
 
 ```.language-twig
 {% verbatim %}{% extends "default" %}{% endverbatim %}
 ```
 
-Every post Markdown content gets transformed to HTML and get wrapped up in a `{% verbatim %}{% block content %}{% endverbatim %}` and then get server automatically to the layout.
+Every post Markdown content gets transformed to HTML and get wrapped up in a `{% verbatim %}{% block content %}{% endverbatim %}` and then get inserted automatically to the layout.
 
-That's good, but that's going to lead us to another. We don't have much control on the display of the **post details page** what if we want to show the title or the date of publishing etc..., we can't because the content is directly served to the template leaving us with not choice.
+That's good, but that's going to lead us to another problem. We don't have much control on the display of the **post details page**. What if we want to show the title or the date of publishing etc..., we can't because the content is directly served to the template leaving us with no choice.
 
 ### Solution
 
-Once could say that we can override the `{% verbatim %}{% block content %}{% endverbatim %}` so we can show additional data, we can do as follow:
+One could say that we can override the `{% verbatim %}{% block content %}{% endverbatim %}` so we can show additional data, we can do as follow:
 
 ```.language-twig
 {% verbatim %}{% extends "default" %}
@@ -387,7 +382,7 @@ Once could say that we can override the `{% verbatim %}{% block content %}{% end
 {% endblock %}{% endverbatim %}
 ```
 
-Good we have a custom template for our posts, but I'm afraid that our above code will not work simply because the result **block** from our post markdown file is going to override what we've put.
+Good, we have a custom template for our posts, but I'm afraid that our above code will not work simply because the result **block** from our post markdown file is going to override what we've put.
 
 Remember when I told you that we have two **blocks** within our **default** template **content** and **content_wrapper** and how that was to handle a specific case, well that was for our current problem. So in order to fix the issue all what we have to do it to change `{% verbatim %}{% block content %}{% endverbatim %}` to `{% verbatim %}{% block content_wrapper %}{% endverbatim %}` in our **Post** template.
 
@@ -395,17 +390,17 @@ Note: The same technique was used for the **Page** type, give the file **app/sou
 
 ## May the Twig force be with you
 
-Most of the time when you are going to need some advanced manipulations in the view, go look how to do it using [Twig](http://twig.sensiolabs.org/). For instance let's say the you want to get the latest post of your blog, one could go search if Sculpin got something that do that, but you can achieve the wanted result by just using the [First](http://twig.sensiolabs.org/doc/filters/first.html) filter like so:
+Most of the time when you are going to need some advanced manipulations in the view, go look how to do it using [Twig](http://twig.sensiolabs.org/). For instance let's say the you want to get the latest post of your blog, one could go search if Sculpin got something that does that, but you can achieve the wanted result by just using the [First](http://twig.sensiolabs.org/doc/filters/first.html) filter like so:
 
 ```.language-twig
 {% verbatim %}{% data.post|first %}{% endverbatim %}
 ```
 
-Check the file **source/_partials/layout/related.twig** to see the implementation of **Related article** functionality.
+Check the file **source/_partials/layout/related.twig** to see the implementation of **Related articles** functionality.
 
 ## Configuration variables
 
-Configuration files come in handy when you wants to re-use a value across your website without breaking the DRY principal, they can be accessed from the global **site** variable, can be also used as a flag to activate or dis activate features on the fly. Notice how I used the **show_related** flag in **source/_partials/layout/related.twig** to enable/disable the show related articles functionality.
+Configuration files come in handy when you wants to re-use a value across your website without breaking the DRY principal, they can be accessed from the global **site** variable. They can be also used as a flag to activate or deactivate features on the fly. Notice how I used the **show_related** flag in **source/_partials/layout/related.twig** to enable/disable the related articles functionality.
 
 ```.language-twig
 {% verbatim %}{% if site.show_related %}
@@ -432,8 +427,8 @@ For more information about configuration go see the official [documentation abou
 {% endif %}{% endverbatim %}
 ```
 
-And yeah! that's pretty much it! Now you have a functional blog skeleton ready for production. With the essential knowledge about Sculpin that allows you to extend the skeleton, customize it and even build your own from scratch.
+And yeah! That's pretty much it! Now you have a functional blog skeleton ready for production. With the essential knowledge about Sculpin that allows you to extend the skeleton, customize it and even build your own from scratch.
 
 # Closing thoughts
 
-You can already start using the provided skeleton, host the output content and you're good to go. However in the next part I'll show you how to use Gulp to manage your assets and most importantly, push your code to your github page right from your Sculpin project.
+You can already start using the provided skeleton, host the output content and you're good to go. However, in the next part I'll show you how to use Gulp to manage your assets and most importantly, push your code to your Github page right from your Sculpin project.
