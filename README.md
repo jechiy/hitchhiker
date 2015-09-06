@@ -21,7 +21,6 @@ First download the **PHAR** and then make is executable.
 ```
 curl -O https://download.sculpin.io/sculpin.phar
 chmod +x sculpin.phar
-mv sculpin.phar ~/bin/sculpin
 ```
 
 It's practical to be able to use Sculpin from anywhere in your system. In order to do that let's move Sculpin to your bin directory.

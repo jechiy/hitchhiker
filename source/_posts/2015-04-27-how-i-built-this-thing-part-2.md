@@ -74,7 +74,7 @@ php "%~dp0sculpin" %*
 
 As I explained earlier SSGs are not limited to blogging only, and so do Sculpin. However, it has a lot of built-in features for blogs.
 
-In the official documentation they recommend using a [Starter kit](https://github.com/sculpin/sculpin-blog-skeleton.git) to get a blog skeleton, which is a good start, but for me, personally, that really get me off the rails, since it contains some advanced features that I didn't wanted to look at first, which made things complex for me. That's why I was obliged to read community projects and jump from one to another in order to understand certain features. the core team themselves are recommending doing this and they're doing their best to improve the documentation. 
+In the official documentation they recommend using a [Starter kit](https://github.com/sculpin/sculpin-blog-skeleton.git) to get a blog skeleton, which is a good start, but for me, personally, that really get me off the rails, since it contains some advanced features that I didn't wanted to look at first, which made things complex for me. That's why I was obliged to read community projects and jump from one to another in order to understand certain features. the core team themselves are recommending doing this and they're doing their best to improve the documentation.
 
 Meanwhile, I decided to create a lightweight, minimal Blog skeleton to help you speed up the process of creating you own blog and more importantly understand the main features of Sculpin.
 
@@ -298,7 +298,7 @@ Here's the layout page (**App/source/_views/default.twig**)
 </html>{% endverbatim %}
 ```
 
-### Partials 
+### Partials
 
 All the included files live within the **app/source/_views** folder. So, before including any file make sure it's in the right place.
 
