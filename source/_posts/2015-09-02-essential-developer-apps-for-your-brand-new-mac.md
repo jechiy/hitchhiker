@@ -1,5 +1,5 @@
 ---
-title: Essential Developer apps for your brand new Mac.
+title: Essential Developer Apps For Your Brand New Mac
 subtitle:
 cover: /assets/images/covers/mac.jpg
 tags:
@@ -9,7 +9,7 @@ use:
     - posts
 ---
 
-If like me, you’re a developer and you finally decided to switch to Mac then trust me you did the right choice but, you’re likely searching for those cool Apps that you’ve seen in your twitter feed, you was amazed with what they can do, but you just ignored them thinking `”One day when I’ll have a Mac”`. Well that day is finally here And I’ll save you the hassle of going through your feed searching because they are probably listed here.
+If like me, you’re a developer and you finally decided to switch to Mac then trust me you did the right choice but, you’re likely searching for those cool Apps that you’ve seen in your twitter feed, you were amazed with what they can do, but you just ignored them thinking `”One day when I’ll have a Mac”`. Well that day is finally here And I’ll save you the hassle of going through your feed searching because they are probably listed here.
 
 In this article I’ll introduce you to some Apps/Tools that I found useful. Some of them are free but others are paid and I’ll try to present some alternatives when available.
 
@@ -19,7 +19,7 @@ In this article I’ll introduce you to some Apps/Tools that I found useful. Som
 
 [iTerm](https://www.iterm2.com/){.mac-app-title target=_blank}
 
-In my opinion the thing number one that you should make pretty and powerful is the Terminal. iTerm is a replacement for the native OSx Terminal. It comes with a lot of great features. Coupled with [Tmux](https://tmux.github.io/) & [oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) you can unleash your repressed powers.
+In my opinion the number one thing that you should make pretty and powerful is the terminal. iTerm is a replacement for the native OSx Terminal. It comes with a lot of great features. Coupled with [Tmux](https://tmux.github.io/) & [oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) you can unleash your repressed powers.
 
 I highly recommend you checking this [article](http://arkhamdev.github.io/tools/2014/12/20/iterm-vim-and-tmux.html) by [Badr Chouai](http://www.twitter.com/arkhamdev) on ***iTerm, Vim and Tmux*** and this [book](https://pragprog.com/book/bhtmux/tmux) for Tmux.
 
@@ -74,12 +74,12 @@ Let you quickly capture and send screenshots, video & files with a simple link.
 ![img](/assets/images/resources/mac/icons/Ember.png){.mac-app-icon}
 
 [Ember](http://realmacsoftware.com/ember/){.mac-app-title target=_blank}
-I like make screenshots of beautiful UIs that I found on the web, but I always end up saving them in my hard drive unorganized and it’s hard to explore them later. That’s where Ember comes in, it lets you store, search screenshots by name, tags and even colors.
+I like making screenshots of beautiful UIs that I found on the web, but I always end up saving them in my hard drive unorganized and it’s hard to explore them later. That’s where Ember comes in, it lets you store, search screenshots by name, tags and even colors.
 
 ![img](/assets/images/resources/mac/icons/Flux.png){.mac-app-icon}
 
 [F.lux](https://justgetflux.com/){.mac-app-title target=_blank}
-This app will saves your eyes from bleeding. It makes the color of your computer’s display adapt to the time of day, warm at night and like sunlight during the day.
+This app will save your eyes from bleeding. It makes the color of your computer’s display adapt to the time of day, warm at night and like sunlight during the day.
 
 ![img](/assets/images/resources/mac/icons/github-desktop.png){.mac-app-icon}
 
@@ -139,7 +139,7 @@ Spotify client for Mac.
 ![img](/assets/images/resources/mac/icons/Unarchiver.png){.mac-app-icon}
 
 [The Unarchiver](http://wakaba.c3.cx/s/apps/unarchiver){.mac-app-title target=_blank}
-For this app alone you should buy a Mac, have you ever been frustrated by decompressing .zip or .rar files, you have to check if it contains a bunch of folder or only one then you have to act accordingly finally you have to remove the compressed file once finished, that’s a lot of work and you don’t have to do that ever agin, ladies and gentlemen I Intoduce you **The Unarchiver**.
+For this app alone you should buy a Mac, have you ever been frustrated by decompressing .zip or .rar files, you have to check if it contains a bunch of folder or only one then you have to act accordingly finally you have to remove the compressed file once finished, that’s a lot of work and you don’t have to do that ever again, ladies and gentlemen I Intoduce you **The Unarchiver**.
 
 ![img](/assets/images/resources/mac/icons/Transmission.png){.mac-app-icon}
 
@@ -161,7 +161,7 @@ Seriously, just wanted to check if you have it installed.
 ![img](/assets/images/resources/mac/icons/1Password.png){.mac-app-icon}
 
 [1Password (Paid)](https://agilebits.com/onepassword){.mac-app-title target=_blank}
-Helps you mange and store all your passwords in one place, the great thing about this one in comparison with the other solutions is it gives you the ability to save it locally (works very well with Dropbox).
+Helps you manage and store all your passwords in one place, the great thing about this one in comparison with the other solutions is it gives you the ability to save it locally (works very well with Dropbox).
 
 ![img](/assets/images/resources/mac/icons/Dropbox.png){.mac-app-icon}
 
@@ -173,6 +173,13 @@ Save your stuff on that thing called the cloud.
 [Hazel](http://www.noodlesoft.com/hazel.php){.mac-app-title target=_blank}
 How many time you found yourslef with a cluttered Desktop and a chaotic Download folder wouldn’t be simple if a tool could help you organize them for you and it wouldn’t be even more cool if you could tell it how, like take all PDF files and put them somewhere or remove torrent files that are older than 1 week. Well Hazel is every flexible app that does just that.
 
+
+![img](/assets/images/resources/mac/icons/OpenEmu.png){.mac-app-icon}
+
+[OpenEmu](http://openemu.org/){.mac-app-title target=_blank}
+The heaven of retrogaming fans!!
+
+(Thanks to Badr for adding this one).
 
 ### Built-in Stuff that you should make use of
 
@@ -201,6 +208,8 @@ This! is a very helpful app folks, I use in two ways:
 
 - In the Spotlight (or Alferer) I write *Define {My-word}*.
 - While reading something in *any* app, I select the world then hit `ctrl+cmd+D a nice tooltip appears with the word's definition.
+
+Edit: You can activate a `three fingers` tap for the second usage that I mentioned, in the *Preferences > Trackpad > Point & Click*. (Thanks to Saad for pointing that out in the comments.)
 
 #### - Mail
 Very great Desktop mail client that works with pretty much any email service provider.
@@ -240,7 +249,7 @@ In the menu:
 - *View > Show Path bar*
 - *View > Show tab bar*
 
-PS: There’s an app called [x] there personalize the finder, but I like to stick to the native one in this case.
+PS: There’s an app called [XtraFinder](https://www.trankynam.com/xtrafinder/) that personalizes the finder, but I like to stick to the native one in this case.
 
 
 ### Personalize Doker
@@ -288,7 +297,7 @@ Now! Go active the damn feature and head to this very well explained [video](htt
 
 ### Bonus tips
 
-- If you have a Retina MBP it generally heats more that the normal ones so don’t panic if it heats a little bit. I generally advise to buy a cooler.
+- If you have a Retina MBP it generally heats more that the normal ones so don’t panic if it heats a little bit. I generally advise you to buy a cooler.
 
 - Try to clean it at least one time per month.
 

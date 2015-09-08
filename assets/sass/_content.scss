@@ -100,6 +100,11 @@
     font-weight: 700;
 }
 
+// Disqus related styling
 #disqus_thread {
     margin:40px;
+}
+
+#disqus_thread a{
+    color: black !important;
 }
